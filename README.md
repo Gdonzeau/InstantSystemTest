@@ -11,3 +11,13 @@
 - Je place également les tests unitaires. Pour le fichier json, je fais un copier coller du retour sur postman (en reduisant toutefois le nombre de réponses)
 - Tests unitaires lancés et couverture du service à 100%
 - Ajout dans le viewDidLoad d'une requête réseau pour tester hors tests unitaires (temporaire bien sûr)
+
+3 - Développement de l'interface et mise en place de l'architecture MVVM
+- Ayant déjà travaillé en architecture MVVM selon avec SwiftUI, je me suis inpiré de ces deux tutoriaux pour construire l'architecture :
+    - https://stevenpcurtis.medium.com/mvvm-in-swift-19ba3f87ed45
+    - https://karthikmk.medium.com/ios-mvvm-b3eb4f519d2d
+- J'ai développé une tableView avec des cellules personnalisées. Cela me paraît la meilleure option pour afficher des titres de journaux. Au début je souhaitais ajouter le descriptif en plus du titre et de l'image, mais la plupart des titres étant eux-mêmes assez longs, cela ne m'a pas paru pertinent au final.
+- J'ai séparé les différentes extensions pour une meilleure lisibilité.
+- J'ai installé aussi le retrait du clavier après l'appui de la touche entrée, d'un toucher de l'écran, ou d'autres événements.
+- Parmi les problèmes identifiés, il y avait la façon dont devaient être classées les nouvelles (ici, par popularité). Un bouton pull Down ou un Segmented Control peuvent faire l'affaire. Ce n'est pas expressément demandé aussi je le laisse éventuellement pour la suite. Les données reçues seront utilisées dans le createUrl de SearchViewController.
+- Après avoir mis en place l'architecture MVVM, j'ai ajusté les tests unitaires et supprimé la partie service qui n'était plus utilisée.

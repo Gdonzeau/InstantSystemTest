@@ -15,7 +15,7 @@ final class InstantSystemTestTests: XCTestCase {
         let url = "Pas bonne url"
         var error: NetworkErrors = .noError
         let errorAwaited: NetworkErrors = .invalidURL
-        let newsService = NewsServices(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
+        let newsService = SearchViewModel(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
         XCTAssertNotEqual(error, errorAwaited)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -37,7 +37,7 @@ final class InstantSystemTestTests: XCTestCase {
         // Given
         var error: NetworkErrors = .noError
         let errorAwaited: NetworkErrors = .errorGenerated
-        let newsService = NewsServices(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
+        let newsService = SearchViewModel(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
         XCTAssertNotEqual(error, errorAwaited)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -59,7 +59,7 @@ final class InstantSystemTestTests: XCTestCase {
         // Given
         var error: NetworkErrors = .noError
         let errorAwaited: NetworkErrors = .noData
-        let newsService = NewsServices(session: URLSessionFake(data: nil, response: FakeResponseData.responseOk, error: nil))
+        let newsService = SearchViewModel(session: URLSessionFake(data: nil, response: FakeResponseData.responseOk, error: nil))
         XCTAssertNotEqual(error, errorAwaited)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -81,7 +81,7 @@ final class InstantSystemTestTests: XCTestCase {
         // Given
         var error: NetworkErrors = .noError
         let errorAwaited: NetworkErrors = .invalidStatusCode
-        let newsService = NewsServices(session: URLSessionFake(data: FakeResponseData.NewsCorrectData, response: FakeResponseData.responseKo, error: nil))
+        let newsService = SearchViewModel(session: URLSessionFake(data: FakeResponseData.NewsCorrectData, response: FakeResponseData.responseKo, error: nil))
         XCTAssertNotEqual(error, errorAwaited)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -103,7 +103,7 @@ final class InstantSystemTestTests: XCTestCase {
         // Given
         var error: NetworkErrors = .noError
         let errorAwaited: NetworkErrors = .decodingError
-        let newsService = NewsServices(session: URLSessionFake(data: FakeResponseData.NewsIncorrectData, response: FakeResponseData.responseOk, error: nil))
+        let newsService = SearchViewModel(session: URLSessionFake(data: FakeResponseData.NewsIncorrectData, response: FakeResponseData.responseOk, error: nil))
         XCTAssertNotEqual(error, errorAwaited)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -126,7 +126,7 @@ final class InstantSystemTestTests: XCTestCase {
         // Given
         var author = ""
         let authorAwaited = "Andrew Tarantola"
-        let newsService = NewsServices(session: URLSessionFake(data: FakeResponseData.NewsCorrectData, response: FakeResponseData.responseOk, error: nil))
+        let newsService = SearchViewModel(session: URLSessionFake(data: FakeResponseData.NewsCorrectData, response: FakeResponseData.responseOk, error: nil))
         XCTAssertNotEqual(authorAwaited, author)
         // When
         print("01")

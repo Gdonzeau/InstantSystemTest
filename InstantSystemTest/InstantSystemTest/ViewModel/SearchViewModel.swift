@@ -1,5 +1,5 @@
 //
-//  NewsServices.swift
+//  SearchViewModel.swift
 //  InstantSystemTest
 //
 //  Created by Guillaume on 29/06/2023.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-class NewsServices {
-    static var shared = NewsServices()
+class SearchViewModel {
+
+    static var shared = SearchViewModel()
     private init() {}
     
     private var task:URLSessionDataTask?
@@ -17,6 +18,12 @@ class NewsServices {
     init(session:URLSession) {
         self.session = session
     }
+    var newsReceived: NewsGot = NewsGot(status: "", totalResults: 0, articles: []) {
+        didSet {
+                articles = newsReceived.articles
+        }
+    }
+    var articles: [Article] = []
     
     func getNews(stringAdress: String, completionHandler: @escaping (Result<NewsGot,NetworkErrors>)->Void) {
         guard let url = URL(string: stringAdress) else {
@@ -42,8 +49,8 @@ class NewsServices {
                     return
                 }
                 do {
-                    let newsReceived = try JSONDecoder().decode(NewsGot.self, from: dataUnwrapped)
-                    completionHandler(.success(newsReceived))
+                    self.newsReceived = try JSONDecoder().decode(NewsGot.self, from: dataUnwrapped)
+                    completionHandler(.success(self.newsReceived))
                 } catch {
                     completionHandler(.failure(.decodingError))
                 }
