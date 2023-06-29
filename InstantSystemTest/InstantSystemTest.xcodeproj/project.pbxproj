@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F03680632A4CE9F200F786CF /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03680622A4CE9F200F786CF /* URLSessionFake.swift */; };
+		F03680672A4D99D400F786CF /* YourAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03680662A4D99D400F786CF /* YourAPIKey.swift */; };
 		F089B78C2A4ADAAA001C254C /* DataNews.json in Resources */ = {isa = PBXBuildFile; fileRef = F089B78B2A4ADAAA001C254C /* DataNews.json */; };
 		F0AB87B72A49E0F900516E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB87B62A49E0F900516E1F /* AppDelegate.swift */; };
 		F0AB87B92A49E0F900516E1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB87B82A49E0F900516E1F /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		F03680622A4CE9F200F786CF /* URLSessionFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		F03680662A4D99D400F786CF /* YourAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAPIKey.swift; sourceTree = "<group>"; };
 		F089B78B2A4ADAAA001C254C /* DataNews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DataNews.json; sourceTree = "<group>"; };
 		F0AB87B32A49E0F900516E1F /* InstantSystemTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstantSystemTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AB87B62A49E0F900516E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		F0AB87E62A49E12600516E1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F03680662A4D99D400F786CF /* YourAPIKey.swift */,
 				F0AB87F52A4A4CFA00516E1F /* NewsGot.swift */,
 			);
 			path = Model;
@@ -331,6 +334,7 @@
 				F0AB87F42A4A4B4000516E1F /* NewsServices.swift in Sources */,
 				F0AB87B92A49E0F900516E1F /* SceneDelegate.swift in Sources */,
 				F0AB87F62A4A4CFA00516E1F /* NewsGot.swift in Sources */,
+				F03680672A4D99D400F786CF /* YourAPIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

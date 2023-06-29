@@ -10,18 +10,21 @@ import UIKit
 class ViewController: UIViewController {
     
     let newsServices = NewsServices.shared
+    let yourAPIKey = APIKey.key
     
-    let stringUrl = "https://newsapi.org/v2/everything?q=France&sortBy=popularity&apiKey=10a80a3edbc94a49b406c4f1fe8eaf67"
+    let stringUrl = "https://newsapi.org/v2/everything?q=France&sortBy=popularity&apiKey="
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        newsServices.getNews(stringAdress: stringUrl) { result in
+        let url = stringUrl + yourAPIKey
+        newsServices.getNews(stringAdress: url) { result in
             print(result)
         }
          
     }
+    
+    
 
 
 }
