@@ -32,5 +32,10 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // On supprime l'image précédemment chargée à la réinitialisation de la cellule.
+    override func prepareForReuse() {
+        photoView.image = nil
+    }
 
 }

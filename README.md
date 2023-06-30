@@ -21,3 +21,6 @@
 - J'ai installé aussi le retrait du clavier après l'appui de la touche entrée, d'un toucher de l'écran, ou d'autres événements.
 - Parmi les problèmes identifiés, il y avait la façon dont devaient être classées les nouvelles (ici, par popularité). Un bouton pull Down ou un Segmented Control peuvent faire l'affaire. Ce n'est pas expressément demandé aussi je le laisse éventuellement pour la suite. Les données reçues seront utilisées dans le createUrl de SearchViewController.
 - Après avoir mis en place l'architecture MVVM, j'ai ajusté les tests unitaires et supprimé la partie service qui n'était plus utilisée.
+
+4 - Simulation d'un ticket
+- En utilisant l'application ce matin, je me suis aperçu que les images se répétaient. Elles ne se rafraichissaient pas toujours. Voilà donc l'occastion de faire un ticket (en effet, jusqu'à maintenant, le développement était assez linéaire et je restais sur la branche main).
