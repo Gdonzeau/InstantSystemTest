@@ -22,5 +22,14 @@
 - Parmi les problèmes identifiés, il y avait la façon dont devaient être classées les nouvelles (ici, par popularité). Un bouton pull Down ou un Segmented Control peuvent faire l'affaire. Ce n'est pas expressément demandé aussi je le laisse éventuellement pour la suite. Les données reçues seront utilisées dans le createUrl de SearchViewController.
 - Après avoir mis en place l'architecture MVVM, j'ai ajusté les tests unitaires et supprimé la partie service qui n'était plus utilisée.
 
-4 - Simulation d'un ticket
+4 - Résolution d'un ticket
 - En utilisant l'application ce matin, je me suis aperçu que les images se répétaient. Elles ne se rafraichissaient pas toujours. Voilà donc l'occastion de faire un ticket (en effet, jusqu'à maintenant, le développement était assez linéaire et je restais sur la branche main).
+- J'ai créé une nouvelle branche dans laquelle j'ai implémenté le rafraichissement de la cellule.
+- Une fois le bug résolu et l'application testée avec succès j'ai fusionné la branche du bug avec la branche main.
+
+5 - Ajout du NewsViewController
+- Création d'une nouvelle branche
+- Création du NewsViewController
+- Implémentation de la transmission de données entres contrôleurs en ajoutant une variable Article.
+- Mise en page
+- Bouton pour accéder à l'article en entier sur une page internet tout en restant dans l'application.

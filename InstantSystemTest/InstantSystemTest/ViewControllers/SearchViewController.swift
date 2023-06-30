@@ -14,9 +14,12 @@ class SearchViewController: UIViewController {
     
     var articles: [Article] = []
     
+    var article = Article(author: "", title: "", url: "", description: "", urlToImage: "", publishedAt: "", content: "")
+    
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,12 +36,21 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Entrez un thème"
         toggleActivityIndicator(shown: false)
         initializeTableView()
         initializeTextField()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToNews" {
+            let newsVC = segue.destination as! NewsViewController
+            newsVC.article = article
+        }
+    }
+    
     private func initializeTableView() {
+        tapGesture.cancelsTouchesInView = false // Pas vraiment lié à la tableView mais sans cette ligne on ne peut pas en sélectionner les cellules
         tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "cellNews")
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,7 +76,6 @@ class SearchViewController: UIViewController {
         let stringUrl2 = "&sortBy=popularity&apiKey="
         
         guard let search = searchField.text else {
-            // Générer un message d'erreur
             allErrors(errorMessage: "Aucune entrée détectée", errorTitle: "Nil")
             return nil
         }
@@ -111,7 +122,5 @@ class SearchViewController: UIViewController {
         
         toggleActivityIndicator(shown: false)
     }
-    
-    
 }
 
