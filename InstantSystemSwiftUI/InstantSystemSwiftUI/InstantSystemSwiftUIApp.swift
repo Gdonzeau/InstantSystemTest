@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct InstantSystemSwiftUIApp: App {
     var body: some Scene {
+        let network = Network.shared
         WindowGroup {
             ContentView()
+                .environmentObject(network)
         }
     }
 }

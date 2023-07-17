@@ -14,6 +14,15 @@
 		F0E1B8522A645E1B007784CD /* InstantSystemSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8512A645E1B007784CD /* InstantSystemSwiftUITests.swift */; };
 		F0E1B85C2A645E1B007784CD /* InstantSystemSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B85B2A645E1B007784CD /* InstantSystemSwiftUIUITests.swift */; };
 		F0E1B85E2A645E1B007784CD /* InstantSystemSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B85D2A645E1B007784CD /* InstantSystemSwiftUIUITestsLaunchTests.swift */; };
+		F0E1B8702A6492CB007784CD /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B86D2A6492CA007784CD /* ArticleView.swift */; };
+		F0E1B8712A6492CB007784CD /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B86E2A6492CA007784CD /* SafariView.swift */; };
+		F0E1B8722A6492CB007784CD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B86F2A6492CB007784CD /* Card.swift */; };
+		F0E1B87A2A64931C007784CD /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8742A64931C007784CD /* ApiData.swift */; };
+		F0E1B87B2A64931C007784CD /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8752A64931C007784CD /* DefaultData.swift */; };
+		F0E1B87C2A64931C007784CD /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8762A64931C007784CD /* NetworkErrors.swift */; };
+		F0E1B87D2A64931C007784CD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8772A64931C007784CD /* Network.swift */; };
+		F0E1B87F2A64931C007784CD /* NewsGot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8792A64931C007784CD /* NewsGot.swift */; };
+		F0E1B8822A6494C4007784CD /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1B8812A6494C4007784CD /* Extension String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		F0E1B8572A645E1B007784CD /* InstantSystemSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstantSystemSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1B85B2A645E1B007784CD /* InstantSystemSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantSystemSwiftUIUITests.swift; sourceTree = "<group>"; };
 		F0E1B85D2A645E1B007784CD /* InstantSystemSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantSystemSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F0E1B86D2A6492CA007784CD /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		F0E1B86E2A6492CA007784CD /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		F0E1B86F2A6492CB007784CD /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F0E1B8742A64931C007784CD /* ApiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
+		F0E1B8752A64931C007784CD /* DefaultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
+		F0E1B8762A64931C007784CD /* NetworkErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		F0E1B8772A64931C007784CD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F0E1B8792A64931C007784CD /* NewsGot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsGot.swift; sourceTree = "<group>"; };
+		F0E1B8812A6494C4007784CD /* Extension String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F08AB1A32A65313900A99E50 /* ServiceApi */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1B8772A64931C007784CD /* Network.swift */,
+			);
+			path = ServiceApi;
+			sourceTree = "<group>";
+		};
 		F0E1B8342A645E18007784CD = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				F0E1B8402A645E18007784CD /* InstantSystemSwiftUIApp.swift */,
-				F0E1B8422A645E18007784CD /* ContentView.swift */,
+				F0E1B8802A6494C3007784CD /* Extensions */,
+				F0E1B8732A64931C007784CD /* Model */,
+				F08AB1A32A65313900A99E50 /* ServiceApi */,
+				F0E1B86C2A6492A5007784CD /* View */,
 				F0E1B8442A645E1B007784CD /* Assets.xcassets */,
 				F0E1B8462A645E1B007784CD /* Preview Content */,
 			);
@@ -125,6 +154,36 @@
 				F0E1B85D2A645E1B007784CD /* InstantSystemSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = InstantSystemSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		F0E1B86C2A6492A5007784CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1B8422A645E18007784CD /* ContentView.swift */,
+				F0E1B86D2A6492CA007784CD /* ArticleView.swift */,
+				F0E1B86F2A6492CB007784CD /* Card.swift */,
+				F0E1B86E2A6492CA007784CD /* SafariView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1B8732A64931C007784CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1B8742A64931C007784CD /* ApiData.swift */,
+				F0E1B8752A64931C007784CD /* DefaultData.swift */,
+				F0E1B8762A64931C007784CD /* NetworkErrors.swift */,
+				F0E1B8792A64931C007784CD /* NewsGot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1B8802A6494C3007784CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1B8812A6494C4007784CD /* Extension String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E1B87F2A64931C007784CD /* NewsGot.swift in Sources */,
+				F0E1B8822A6494C4007784CD /* Extension String.swift in Sources */,
+				F0E1B8712A6492CB007784CD /* SafariView.swift in Sources */,
 				F0E1B8432A645E18007784CD /* ContentView.swift in Sources */,
+				F0E1B87A2A64931C007784CD /* ApiData.swift in Sources */,
+				F0E1B87B2A64931C007784CD /* DefaultData.swift in Sources */,
+				F0E1B8722A6492CB007784CD /* Card.swift in Sources */,
+				F0E1B87D2A64931C007784CD /* Network.swift in Sources */,
+				F0E1B87C2A64931C007784CD /* NetworkErrors.swift in Sources */,
+				F0E1B8702A6492CB007784CD /* ArticleView.swift in Sources */,
 				F0E1B8412A645E18007784CD /* InstantSystemSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

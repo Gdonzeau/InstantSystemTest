@@ -33,3 +33,12 @@
 - Implémentation de la transmission de données entres contrôleurs en ajoutant une variable Article.
 - Mise en page
 - Bouton pour accéder à l'article en entier sur une page internet tout en restant dans l'application.
+
+6 - Refonte de l'application en SwiftUI
+- Mise en forme de l'application avec reprise partielle de documents de la partie UIKit.
+- Création d'une carte pour afficher l'aspect de l'article.
+- Création d'une vue pour visionner l'article.
+- Création d'une vue pour gérer les pages internet
+- La logique de l'application se trouve dans la partie Network. J'utilise cette fois-ci async et await.
+- Création d'une extension pour savoir si un string est une adresse internet.
+- Il reste à faire les tests unitaires pour tester le Network.
