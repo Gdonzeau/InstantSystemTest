@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var network: Network
+    @StateObject var viewModel = ViewModel()
     
     @State private var search = ""
     
@@ -19,9 +19,11 @@ struct ContentView: View {
                     AppColors.contentViewBackgroundColor.ignoresSafeArea()
                     ScrollView {
                         VStack {
-                            ForEach(network.articles, id: \.self) { article in
-                                Card(article: article)
-                                    .padding(.horizontal, 20)
+                            if let articles = viewModel.articles {
+                                ForEach(articles, id: \.self) { article in
+                                    Card(article: article)
+                                        .padding(.horizontal, 20)
+                                }
                             }
                         }
                     }
@@ -30,15 +32,22 @@ struct ContentView: View {
             }
             .searchable(text: $search, prompt: "Entrez vos mots clés")
             .onSubmit(of: .search) {
-                network.gettingUrl(search: search)
+                viewModel.gettingUrl(search: search)
                 Task {
-                    await network.searchNews()
+                    do {
+                        viewModel.gettingUrl(search: search)
+                        if !viewModel.isError {
+                            try await viewModel.getNews()
+                        }
+                    } catch let error {
+                        print("Erreur : \(error)")
+                    }
                 }
             }
-            .alert(network.errorTitle, isPresented: $network.isError) {
+            .alert(viewModel.error?.failureReason ?? "Erreur", isPresented: $viewModel.isError) {
                 Button("OK", role: .cancel) {}
             } message: {
-                Text(network.errorMessage)
+                Text(viewModel.error?.errorDescription ?? "Une erreur est survenue")
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -48,6 +57,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Network(session: URLSession(configuration: .default)))
     }
 }
