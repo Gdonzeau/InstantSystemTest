@@ -118,4 +118,23 @@ final class ViewModelTests: XCTestCase {
         XCTAssertNotNil(errorResult)
         XCTAssertEqual(errorAwaited, errorResult)
     }
+    
+    func testGetApiData_WithUrlString_ReturnBadResponse() async {
+        // Given
+        let sampleUrl = URL(string: "BadResponse")!
+        let viewModel = ViewModel(url: sampleUrl ,networkSession: MockNetworkSessionNet())
+        var errorResult:  NetworkErrors?
+        let errorAwaited = NetworkErrors.invalidStatusCode
+        XCTAssertNil(errorResult)
+        XCTAssertNotEqual(errorAwaited, errorResult)
+        // When
+        do {
+            try await viewModel.getNews()
+        } catch let error {
+            errorResult = error as? NetworkErrors
+        }
+        // Then
+        XCTAssertNotNil(errorResult)
+        XCTAssertEqual(errorAwaited, errorResult)
+    }
 }

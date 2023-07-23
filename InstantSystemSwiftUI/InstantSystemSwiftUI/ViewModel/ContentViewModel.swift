@@ -50,7 +50,7 @@ class ViewModel: ObservableObject {
             return
         }
         let url = URL(string: ApiData.url1 + httpString + ApiData.url2 + ApiData.apiKey)!
-        print(url)
+        
         completionHandler(.success(url))
     }
     
@@ -66,8 +66,11 @@ class ViewModel: ObservableObject {
         do {
             responseData = try await networkSession.fetchData(url: url)
         } catch {
-            self.error = error as? NetworkErrors
-            self.isError = true
+            if let error = error as? NetworkErrors {
+                self.error = error
+                self.isError = true
+                throw error
+            }
         }
         
         do {

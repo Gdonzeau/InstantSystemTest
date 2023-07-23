@@ -46,4 +46,9 @@ class FakeResponseData { // Les différentes réponses possibles du call API
         let url = URL(string: "SendBadData")!
         return url
     }
+    
+    static var urlForBasResponse: URL {
+        let url = URL(string: "BadResponse")!
+        return url
+    }
 }
